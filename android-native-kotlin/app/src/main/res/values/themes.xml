@@ -1,0 +1,5 @@
+<resources>
+    <style name="Theme.AJMoneyPro" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/deep_navy_blue</item>
+    </style>
+</resources>

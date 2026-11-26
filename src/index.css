@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* =========================================================================
+   LIGHT THEME OVERRIDES (Full Applet High-Contrast Fintech Styling)
+   ========================================================================= */
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Background conversions in light theme */
+html.light .bg-slate-950,
+html.light .bg-slate-950\/90,
+html.light .bg-slate-950\/80,
+html.light .bg-slate-950\/60,
+html.light .bg-slate-950\/40 {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+html.light .bg-slate-900,
+html.light .bg-slate-900\/90,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-900\/70,
+html.light .bg-slate-900\/60,
+html.light .bg-slate-900\/50,
+html.light .bg-slate-900\/40 {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+html.light .bg-slate-800,
+html.light .bg-slate-800\/90,
+html.light .bg-slate-800\/80,
+html.light .bg-slate-800\/60,
+html.light .bg-slate-800\/50,
+html.light .bg-slate-800\/40 {
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+/* Border conversions in light theme */
+html.light .border-slate-800,
+html.light .border-slate-800\/80,
+html.light .border-slate-800\/60,
+html.light .border-slate-800\/50,
+html.light .border-slate-700,
+html.light .border-slate-700\/60,
+html.light .border-slate-700\/50 {
+  border-color: #e2e8f0;
+}
+
+/* Typography conversions in light theme (eliminates invisible white text on white cards) */
+html.light .text-white {
+  color: #0f172a;
+}
+
+html.light .text-slate-100,
+html.light .text-slate-200 {
+  color: #1e293b;
+}
+
+html.light .text-slate-300 {
+  color: #334155;
+}
+
+html.light .text-slate-400 {
+  color: #64748b;
+}
+
+html.light .text-slate-500 {
+  color: #64748b;
+}
+
+/* Form inputs & select elements in light theme */
+html.light input,
+html.light select,
+html.light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* =========================================================================
+   PROTECTED ELEMENTS THAT MUST ALWAYS HAVE PURE WHITE TEXT IN LIGHT THEME
+   ========================================================================= */
+
+/* 1. Metallic Fintech Hero Card on Dashboard */
+html.light .fintech-hero-card {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  color: #ffffff !important;
+}
+
+html.light .fintech-hero-card * {
+  color: #ffffff !important;
+}
+
+html.light .fintech-hero-card .text-slate-200,
+html.light .fintech-hero-card .text-slate-300 {
+  color: #cbd5e1 !important;
+}
+
+html.light .fintech-hero-card .text-emerald-300 {
+  color: #6ee7b7 !important;
+}
+
+html.light .fintech-hero-card .text-rose-300 {
+  color: #fda4af !important;
+}
+
+html.light .fintech-hero-card .text-blue-300 {
+  color: #93c5fd !important;
+}
+
+/* 2. Action buttons, CTA gradients, and primary colored elements */
+html.light button.bg-blue-600,
+html.light button.bg-blue-600 *,
+html.light button.bg-blue-500,
+html.light button.bg-blue-500 *,
+html.light button.bg-emerald-600,
+html.light button.bg-emerald-600 *,
+html.light button.bg-emerald-500,
+html.light button.bg-emerald-500 *,
+html.light button.bg-red-600,
+html.light button.bg-red-600 *,
+html.light button.bg-red-500,
+html.light button.bg-red-500 *,
+html.light button.bg-rose-600,
+html.light button.bg-rose-600 *,
+html.light button.bg-indigo-600,
+html.light button.bg-indigo-600 *,
+html.light button.bg-purple-600,
+html.light button.bg-purple-600 *,
+html.light button[class*="bg-gradient-to-"],
+html.light button[class*="bg-gradient-to-"] *,
+html.light a[class*="bg-gradient-to-"],
+html.light a[class*="bg-gradient-to-"] *,
+html.light .text-always-white,
+html.light .badge-white {
+  color: #ffffff !important;
+}
+
+/* 3. Category & Account colored avatar badges with inline background colors */
+html.light [style*="background-color"] svg,
+html.light [style*="backgroundColor"] svg {
+  color: #ffffff !important;
+}
+
+/* =========================================================================
+   DARK THEME SPECIFIC STYLES
+   ========================================================================= */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #020617;
+  color: #f8fafc;
+}
+
+/* =========================================================================
+   CUSTOM SCROLLBAR & UTILITIES
+   ========================================================================= */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0.5rem);
+}
